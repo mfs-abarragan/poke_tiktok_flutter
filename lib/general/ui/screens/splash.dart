@@ -19,7 +19,6 @@ class Splash extends StatelessWidget {
     PokemonSliderController pokemonSliderController =
         Get.put(PokemonSliderController());
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
-    pokemonSliderController.getPokemons();
 
     return Scaffold(
       body: Obx(
@@ -30,7 +29,7 @@ class Splash extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Padding(
-                padding: EdgeInsets.only(left: 58, right: 58),
+                padding: EdgeInsets.only(left: 72, right: 44),
                 child: Image.asset('assets/images/squirtle.png'),
               ),
               Container(

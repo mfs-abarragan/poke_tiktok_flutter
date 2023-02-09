@@ -6,7 +6,8 @@ import '../controllers/server_error.dart';
 
 class PokemonSliderRepository extends GetxController {
   PokemonSliderAPI pokemonSliderAPI = Get.put(PokemonSliderAPI());
-  Future<Either<List<Pokemon>, ServerError>> getPokemons() async {
-    return await pokemonSliderAPI.getPokemons();
+  Future<Either<ServerError, Pokemon>> loadPokemon(
+      int lastLoadedPokemon) async {
+    return await pokemonSliderAPI.loadPokemon(lastLoadedPokemon);
   }
 }
