@@ -1,5 +1,6 @@
 import 'package:flutter/animation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:poke_tiktok_flutter/pokemon-slider/controllers/pokemon.dart';
 import 'package:poke_tiktok_flutter/pokemon-slider/repository/pokemon_slider_repository.dart';
@@ -21,7 +22,19 @@ class PokemonSliderController extends GetxController {
   }
 
   _init() async {
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
     await loadPokemon();
+    await loadPokemon();
+    await loadPokemon();
+    await loadPokemon();
+    await loadPokemon();
+    Get.to(
+      () => PokemonSlider(),
+      duration: const Duration(milliseconds: 1500),
+      transition: Transition.circularReveal,
+      curve: Curves.easeInExpo,
+    );
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.leanBack);
   }
 
   void setLastLoadedPokemon(newValue) => lastLoadedPokemon.value = newValue;
@@ -30,17 +43,10 @@ class PokemonSliderController extends GetxController {
     Pokemon pokemon;
     var response =
         await pokemonSliderRepository.loadPokemon(lastLoadedPokemon.value);
-
     if (response.isRight) {
       pokemon = response.right;
       pokemonList.add(pokemon);
-      await Future.delayed(const Duration(seconds: 2));
-      Get.to(
-        () => const PokemonSlider(),
-        duration: const Duration(milliseconds: 1500),
-        transition: Transition.circularReveal,
-        curve: Curves.easeInExpo,
-      );
+      lastLoadedPokemon.value++;
     }
   }
 }

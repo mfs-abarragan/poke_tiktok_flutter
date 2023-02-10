@@ -45,9 +45,12 @@ class PokemonSliderAPI extends GetxController {
       List<String> moves = [];
       moves.add(generalController.capitalize(
           json.decode(json.encode(response.data))['moves'][0]['move']['name']));
-      moves.add(generalController.capitalize(
-          json.decode(json.encode(response.data))['moves'][1]['move']['name']));
-      print(moves);
+      if (json.decode(json.encode(response.data))['moves'].length > 1) {
+        moves.add(generalController.capitalize(json
+            .decode(json.encode(response.data))['moves'][1]['move']['name']));
+      }
+
+      print(name);
       Pokemon loadedPokemon = Pokemon(
           number: pokemonToLoad,
           name: name,

@@ -1,7 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:get/get.dart';
 import 'package:poke_tiktok_flutter/app_constants.dart';
@@ -18,7 +17,6 @@ class Splash extends StatelessWidget {
     GeneralController generalController = Get.put(GeneralController());
     PokemonSliderController pokemonSliderController =
         Get.put(PokemonSliderController());
-    SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
 
     return Scaffold(
       body: Obx(
@@ -51,15 +49,6 @@ class Splash extends StatelessWidget {
                           fontSize: 18,
                           fontWeight: FontWeight.bold),
                       textAlign: TextAlign.center,
-                    ),
-                    Visibility(
-                      visible: generalController.splashMessage.value ==
-                          AppConstants.splashLoadingText,
-                      child: Container(
-                        margin: EdgeInsets.only(top: 18),
-                        child: SpinKitThreeBounce(
-                            color: CustomColors.darkGray, size: 24),
-                      ),
                     ),
                   ],
                 ),
