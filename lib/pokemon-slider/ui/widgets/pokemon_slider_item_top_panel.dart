@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:poke_tiktok_flutter/favourites/ui/widgets/mark_favourite_button.dart';
+import 'package:poke_tiktok_flutter/favourites/ui/widgets/fav_button.dart';
 import 'package:poke_tiktok_flutter/favourites/ui/widgets/show_favourites_button.dart';
 
 class PokemonSliderItemTopPanel extends StatelessWidget

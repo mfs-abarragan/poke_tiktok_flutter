@@ -20,6 +20,7 @@ dependencies:
   either_dart: ^0.3.0
   internet_connection_checker: ^0.0.1+4
   cached_network_image: ^3.2.1
+  fullscreen: ^1.0.3
 
 dev_dependencies:
   flutter_test:
