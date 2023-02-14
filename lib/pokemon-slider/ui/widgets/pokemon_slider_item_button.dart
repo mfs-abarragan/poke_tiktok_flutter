@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:poke_tiktok_flutter/app_constants.dart';
 import 'package:poke_tiktok_flutter/pokemon-slider/controllers/pokemon_slider_controller.dart';
-
 import '../../../general/ui/styles/custom_colors.dart';
 import '../../../general/ui/styles/general_styles.dart';
 
@@ -18,6 +17,7 @@ class PokemonSliderItemButton extends StatelessWidget {
       () => InkWell(
         onTap: () {
           pokemonSliderController.tapButtonEffect();
+          Get.toNamed('battle');
         },
         child: Row(
           children: [

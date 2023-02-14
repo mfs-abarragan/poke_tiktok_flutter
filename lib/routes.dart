@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:poke_tiktok_flutter/battle/ui/screens/battle.dart';
 import 'package:poke_tiktok_flutter/favourites/ui/screens/favourites_list.dart';
 import 'general/ui/screens/splash.dart';
 import 'pokemon-slider/ui/screens/pokemon_slider.dart';
@@ -11,6 +12,8 @@ Route<dynamic> getRoutes(RouteSettings settings) {
       return getPageRoute(PokemonSlider());
     case 'favourites-list':
       return getPageRoute(const FavouritesList());
+    case 'battle':
+      return getPageRoute(const Battle());
     default:
       return getPageRoute(const Splash());
   }

@@ -68,11 +68,13 @@ class FavouritesList extends StatelessWidget {
                           children: [
                             Image.asset(
                                 'assets/images/animation_magikarp_1_cropped.gif'),
-                            const Text(AppConstants.noFavouritesText,
-                                style: GeneralTextStyle(
-                                    fontFamily: 'Lato',
-                                    color: CustomColors.mainButtonColor,
-                                    fontSize: 18)),
+                            const Text(
+                              AppConstants.noFavouritesText,
+                              style: GeneralTextStyle(
+                                  fontFamily: 'Lato',
+                                  color: CustomColors.mainButtonColor,
+                                  fontSize: 18),
+                            ),
                           ],
                         ),
                       ],

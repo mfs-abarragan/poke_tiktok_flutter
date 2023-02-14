@@ -6,5 +6,6 @@ class CustomColors {
   static const Color statPointsColor = Color(0xffa3a3a3);
   static const Color mainBorderColor = Color(0xfff0f0f0);
   static const Color mainButtonColor = Color(0xff383838);
-  static const Color mainButtonSplashColor = Color(0xffffffff);
+  static const Color battlePokemonInfoContainerColor = Color(0xffe2e1e0);
+  static const Color battlePokemonInfoContainerHpColor = Color(0xff31ab35);
 }
