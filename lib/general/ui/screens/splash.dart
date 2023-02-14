@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:poke_tiktok_flutter/app_constants.dart';
+import 'package:poke_tiktok_flutter/favourites/controllers/favourites_controller.dart';
 import 'package:poke_tiktok_flutter/general/ui/styles/general_styles.dart';
 import 'package:poke_tiktok_flutter/pokemon-slider/controllers/pokemon_slider_controller.dart';
 import '../../controllers/general_controller.dart';

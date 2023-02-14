@@ -21,11 +21,13 @@ class ConnectionErrorSnackbarRetryButton extends StatelessWidget {
       () => InkWell(
         child: Container(
           child: connectionErrorSnackbarController.isRetryButtonLoading.value
-              ? const SpinKitThreeBounce(size: 20, color: Colors.blueAccent)
+              ? const Center(
+                  child: SpinKitThreeBounce(size: 20, color: Colors.blueAccent))
               : const Text(
                   'REINTENTAR',
                   style: GeneralTextStyle(
                       fontFamily: 'Lato', color: Colors.blueAccent),
+                  textAlign: TextAlign.center,
                 ),
         ),
         onTap: () async {

@@ -5,4 +5,5 @@ class AppConstants {
   static const String mainButtonText = '¡Yo te elijo!';
   static const String showFavouritesText = 'Ver favoritos';
   static const String connectionErrorText = 'Vamoa conectarno a Internet...';
+  static const String noFavouritesText = 'No tienes favoritos todavía.';
 }

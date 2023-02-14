@@ -3,6 +3,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:poke_tiktok_flutter/favourites/controllers/favourites_pokemon_slider_controller_interface.dart';
 import 'package:poke_tiktok_flutter/general/controllers/connection_error_snackbar_controller.dart';
 import 'package:poke_tiktok_flutter/general/ui/styles/general_styles.dart';
 import 'package:poke_tiktok_flutter/general/ui/widgets/connection_error_snackbar.dart';
@@ -16,6 +17,8 @@ class PokemonSlider extends StatelessWidget {
   PokemonSliderController controller = Get.put(PokemonSliderController());
   ConnectionErrorSnackbarController connectionErrorSnackbarController =
       Get.put(ConnectionErrorSnackbarController());
+  FavouritesPokemonSliderControllerInterface controllerInterface =
+      Get.put(FavouritesPokemonSliderControllerInterface());
 
   @override
   Widget build(BuildContext context) {
@@ -27,11 +30,11 @@ class PokemonSlider extends StatelessWidget {
               Positioned.fill(
                 child: CarouselSlider.builder(
                   carouselController: controller.carouselController,
-                  itemCount: controller.pokemonList.value.length,
+                  itemCount: controllerInterface.pokemonList.value.length,
                   itemBuilder: (BuildContext context, int itemIndex,
                           int pageViewIndex) =>
                       PokemonSliderItem(
-                          pokemon: controller.pokemonList[itemIndex]),
+                          pokemon: controllerInterface.pokemonList[itemIndex]),
                   options: CarouselOptions(
                     aspectRatio: 16 / 9,
                     viewportFraction: 1,
@@ -43,11 +46,13 @@ class PokemonSlider extends StatelessWidget {
                     enlargeFactor: 0,
                     onPageChanged: (index, reason) async {
                       controller.setCarouselIndex(index);
-                      if (index != (controller.pokemonList.length - 1)) {
+                      controllerInterface.setCarouselIndex(index);
+                      if (index !=
+                          (controllerInterface.pokemonList.length - 1)) {
                         generalController.setIsConnectionSnackbarVisible(false);
                       }
                       if (controller.carouselIndex.value ==
-                          (controller.pokemonList.length - 1)) {
+                          (controllerInterface.pokemonList.length - 1)) {
                         controller.setIsGestureDetectorVisible(true);
                       }
                     },
@@ -55,16 +60,20 @@ class PokemonSlider extends StatelessWidget {
                   ),
                 ),
               ),
-              Visibility(
-                visible: controller.isGestureDetectorVisible.value,
-                child: GestureDetector(
-                  child: Container(
-                    color: Colors.transparent,
+              Align(
+                alignment: Alignment.bottomCenter,
+                child: Visibility(
+                  visible: controller.isGestureDetectorVisible.value,
+                  child: GestureDetector(
+                    child: Container(
+                      height: MediaQuery.of(context).size.height * 0.8,
+                      color: Colors.transparent,
+                    ),
+                    onPanUpdate: (details) async {
+                      await connectionErrorSnackbarController
+                          .gestureBehaviour(details);
+                    },
                   ),
-                  onPanUpdate: (details) async {
-                    await connectionErrorSnackbarController
-                        .gestureBehaviour(details);
-                  },
                 ),
               ),
               Visibility(

@@ -8,6 +8,7 @@ class Pokemon {
   String mainSpriteUrl;
   String secondarySpriteUrl;
   List<String> moves;
+  bool isFavourite;
 
   Pokemon(
       {required this.number,
@@ -18,5 +19,10 @@ class Pokemon {
       required this.defense,
       required this.mainSpriteUrl,
       required this.secondarySpriteUrl,
-      required this.moves});
+      required this.moves,
+      this.isFavourite = false});
+
+  void setIsFav(newValue) {
+    isFavourite = newValue;
+  }
 }

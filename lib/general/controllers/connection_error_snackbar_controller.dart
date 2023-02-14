@@ -18,7 +18,7 @@ class ConnectionErrorSnackbarController extends GetxController {
     setIsRetryButtonLoading(true);
     await Future.delayed(const Duration(seconds: 1));
     await pokemonSliderController.loadNextFivePokemon();
-    if (pokemonSliderController.pokemonList.isNotEmpty) {
+    if (pokemonSliderController.controllerInterface.pokemonList.isNotEmpty) {
       generalController.setIsConnectionSnackbarVisible(false);
       generalController.setIsSplashContentVisible(false);
       Get.to(
@@ -33,11 +33,11 @@ class ConnectionErrorSnackbarController extends GetxController {
 
   Future<void> retryLoadingPokemonFromSliderSnackBar() async {
     var pokemonListLengthBeforeRetrying =
-        pokemonSliderController.pokemonList.length;
+        pokemonSliderController.controllerInterface.pokemonList.length;
     setIsRetryButtonLoading(true);
     await Future.delayed(const Duration(seconds: 1));
     await pokemonSliderController.loadNextFivePokemon();
-    if (pokemonSliderController.pokemonList.length >
+    if (pokemonSliderController.controllerInterface.pokemonList.length >
         pokemonListLengthBeforeRetrying) {
       generalController.setIsConnectionSnackbarVisible(false);
       pokemonSliderController.carouselController.animateToPage(
@@ -51,10 +51,10 @@ class ConnectionErrorSnackbarController extends GetxController {
 
   Future<void> retryLoadingPokemonFromSlider() async {
     var pokemonListLengthBeforeRetrying =
-        pokemonSliderController.pokemonList.length;
+        pokemonSliderController.controllerInterface.pokemonList.length;
     setIsRetryButtonLoading(true);
     await pokemonSliderController.loadNextFivePokemon();
-    if (pokemonSliderController.pokemonList.length >
+    if (pokemonSliderController.controllerInterface.pokemonList.length >
         pokemonListLengthBeforeRetrying) {
       generalController.setIsConnectionSnackbarVisible(false);
       if (pokemonSliderController.carouselIndex.value ==

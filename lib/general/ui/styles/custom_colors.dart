@@ -6,4 +6,5 @@ class CustomColors {
   static const Color statPointsColor = Color(0xffa3a3a3);
   static const Color mainBorderColor = Color(0xfff0f0f0);
   static const Color mainButtonColor = Color(0xff383838);
+  static const Color mainButtonSplashColor = Color(0xffffffff);
 }

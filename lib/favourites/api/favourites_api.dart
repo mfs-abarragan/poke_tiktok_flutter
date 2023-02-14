@@ -6,15 +6,16 @@ import 'package:either_dart/either.dart';
 import 'package:get/get.dart';
 import 'package:poke_tiktok_flutter/app_constants.dart';
 import 'package:poke_tiktok_flutter/general/controllers/general_controller.dart';
-import '../controllers/pokemon.dart';
-import '../controllers/server_error.dart';
 
-class PokemonSliderAPI {
+import '../../pokemon-slider/controllers/pokemon.dart';
+import '../../pokemon-slider/controllers/server_error.dart';
+
+class PokemonFavouritesAPI {
   GeneralController generalController = Get.put(GeneralController());
 
-  Future<Either<ServerError, Pokemon>> loadPokemon(
-      int lastLoadedPokemon) async {
-    String pokemonToLoad = (lastLoadedPokemon + 1).toString();
+  Future<Either<ServerError, Pokemon>> loadFavouritePokemon(
+      int favouritePokemonNumber) async {
+    String pokemonToLoad = favouritePokemonNumber.toString();
     bool checkConnection = await generalController.checkConnection();
     if (checkConnection) {
       try {

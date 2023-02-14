@@ -17,8 +17,6 @@ class PokemonSliderItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     GeneralController generalController = Get.put(GeneralController());
-    PokemonSliderController pokemonSliderController =
-        Get.put(PokemonSliderController());
 
     return SafeArea(
       child: Scaffold(
@@ -28,7 +26,7 @@ class PokemonSliderItem extends StatelessWidget {
           child: Container(
             child: Column(
               children: [
-                const PokemonSliderItemTopPanel(),
+                PokemonSliderItemTopPanel(pokemonNumber: pokemon.number),
                 Container(
                   alignment: Alignment.centerLeft,
                   child: Text(

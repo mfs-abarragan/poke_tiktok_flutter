@@ -17,7 +17,7 @@ class ConnectionErrorSnackbar extends StatelessWidget {
       visible: isVisible,
       child: Container(
         height: 100,
-        padding: const EdgeInsets.only(left: 12, right: 32),
+        padding: const EdgeInsets.only(left: 18, right: 18),
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(6),
@@ -33,18 +33,19 @@ class ConnectionErrorSnackbar extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset('assets/images/animation_magikarp_1.gif'),
-            Expanded(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const Text(
-                    'Sin internet',
-                    style: GeneralTextStyle(fontFamily: 'Lato'),
-                  ),
-                  ConnectionErrorSnackbarRetryButton(fromSplash: fromSplash),
-                ],
+            Container(
+              padding: const EdgeInsets.only(top: 8, bottom: 8, right: 8),
+              child:
+                  Image.asset('assets/images/animation_magikarp_1_cropped.gif'),
+            ),
+            const Expanded(
+              child: Text(
+                'Sin internet',
+                style: GeneralTextStyle(fontFamily: 'Lato'),
               ),
+            ),
+            Expanded(
+              child: ConnectionErrorSnackbarRetryButton(fromSplash: fromSplash),
             ),
           ],
         ),
