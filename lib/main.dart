@@ -2,7 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:poke_tiktok_flutter/routes.dart';
 
+import 'general/controllers/super_controller.dart';
+
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  Get.put(LifeCycleController());
   runApp(const MyApp());
 }
 

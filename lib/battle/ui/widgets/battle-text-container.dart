@@ -29,24 +29,34 @@ class BattleTextContainer extends StatelessWidget {
               visible: battleController.isActionSequenceOneVisible.value,
               child: InkWell(
                 onTap: () => battleController.actionSequenceOne(),
-                child: Container(
-                  height: 600,
-                  margin: const EdgeInsets.only(top: 18),
-                  child: Row(
-                    children: [
-                      const Icon(Icons.play_arrow,
-                          color: Colors.black, size: 28),
-                      Container(
-                        margin: const EdgeInsets.only(left: 12, bottom: 4),
-                        child: const Text(
-                          'Atacar',
-                          style: GeneralTextStyle(
-                              fontFamily: 'Pokemon-Classic',
-                              fontWeight: FontWeight.bold),
-                        ),
+                child: Column(
+                  children: [
+                    Container(
+                      margin: const EdgeInsets.only(top: 18),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Container(
+                            margin: const EdgeInsets.only(top: 4),
+                            child: const Icon(Icons.play_arrow,
+                                color: Colors.black, size: 28),
+                          ),
+                          Flexible(
+                            child: Container(
+                              margin:
+                                  const EdgeInsets.only(left: 12, bottom: 4),
+                              child: const Text(
+                                'Atacar',
+                                style: GeneralTextStyle(
+                                    fontFamily: 'Pokemon-Classic',
+                                    fontWeight: FontWeight.bold),
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
               ),
             ),
@@ -72,6 +82,111 @@ class BattleTextContainer extends StatelessWidget {
                                   const EdgeInsets.only(left: 12, bottom: 4),
                               child: const Text(
                                 'Sugiéreme algo más productivo',
+                                style: GeneralTextStyle(
+                                    fontFamily: 'Pokemon-Classic',
+                                    fontWeight: FontWeight.bold),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            Visibility(
+              visible: battleController.isActionSequenceThreeVisible.value,
+              child: InkWell(
+                onTap: () => battleController.actionSequenceThree(),
+                child: Column(
+                  children: [
+                    Container(
+                      margin: const EdgeInsets.only(top: 18),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Container(
+                            margin: const EdgeInsets.only(top: 4),
+                            child: const Icon(Icons.play_arrow,
+                                color: Colors.black, size: 28),
+                          ),
+                          Flexible(
+                            child: Container(
+                              margin:
+                                  const EdgeInsets.only(left: 12, bottom: 4),
+                              child: const Text(
+                                'Lo voy a pensar',
+                                style: GeneralTextStyle(
+                                    fontFamily: 'Pokemon-Classic',
+                                    fontWeight: FontWeight.bold),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            Visibility(
+              visible: battleController.isActionSequenceFourVisible.value,
+              child: InkWell(
+                onTap: () => battleController.actionSequenceFour(),
+                child: Column(
+                  children: [
+                    Container(
+                      margin: const EdgeInsets.only(top: 18),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Container(
+                            margin: const EdgeInsets.only(top: 4),
+                            child: const Icon(Icons.play_arrow,
+                                color: Colors.black, size: 28),
+                          ),
+                          Flexible(
+                            child: Container(
+                              margin:
+                                  const EdgeInsets.only(left: 12, bottom: 4),
+                              child: const Text(
+                                'Ok, contratar a Alex',
+                                style: GeneralTextStyle(
+                                    fontFamily: 'Pokemon-Classic',
+                                    fontWeight: FontWeight.bold),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            Visibility(
+              visible: battleController.isActionSequenceFiveVisible.value,
+              child: InkWell(
+                onTap: () => battleController.actionSequenceFive(),
+                child: Column(
+                  children: [
+                    Container(
+                      margin: const EdgeInsets.only(top: 18),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Container(
+                            margin: const EdgeInsets.only(top: 4),
+                            child: const Icon(Icons.play_arrow,
+                                color: Colors.black, size: 28),
+                          ),
+                          Flexible(
+                            child: Container(
+                              margin:
+                                  const EdgeInsets.only(left: 12, bottom: 4),
+                              child: const Text(
+                                'Continuar',
                                 style: GeneralTextStyle(
                                     fontFamily: 'Pokemon-Classic',
                                     fontWeight: FontWeight.bold),

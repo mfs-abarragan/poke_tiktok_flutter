@@ -22,6 +22,11 @@ dependencies:
   cached_network_image: ^3.2.1
   fullscreen: ^1.0.3
   path_provider: ^2.0.12
+  url_launcher: ^6.1.9
+  just_audio: ^0.9.31
+  audio_service: ^0.18.9
+  audio_session: ^0.1.13
+  assets_audio_player: ^3.0.6
 
 dev_dependencies:
   flutter_test:
@@ -35,6 +40,7 @@ flutter:
 
   assets:
    - assets/images/
+   - assets/audio/
 
   fonts:
     - family: Pokemon-Classic

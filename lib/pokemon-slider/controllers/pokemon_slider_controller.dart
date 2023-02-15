@@ -32,6 +32,7 @@ class PokemonSliderController extends GetxController {
 
   _init() async {
     FullScreen.enterFullScreen(FullScreenMode.EMERSIVE_STICKY);
+    generalController.loadAudio();
     await loadNextFivePokemon();
     await favouritesController.readFavourites();
     print(controllerInterface.favourites);
@@ -48,6 +49,12 @@ class PokemonSliderController extends GetxController {
     } else {
       FullScreen.exitFullScreen();
     }
+  }
+
+  @override
+  void dispose() {
+    generalController.assetsAudioPlayer.dispose();
+    super.dispose();
   }
 
   void tapButtonEffect() async {

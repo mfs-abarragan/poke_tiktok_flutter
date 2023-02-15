@@ -17,7 +17,7 @@ class BattlePokemonInfoContainer extends StatelessWidget {
       decoration: BoxDecoration(
         color: CustomColors.battlePokemonInfoContainerColor,
         border: Border.all(width: 2, color: Colors.black),
-        borderRadius: BorderRadius.circular(6),
+        //borderRadius: BorderRadius.circular(6),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -35,10 +35,11 @@ class BattlePokemonInfoContainer extends StatelessWidget {
                       fontFamily: 'Pokemon-Classic',
                       fontSize: 10,
                       fontWeight: FontWeight.bold)),
-              Container(
-                height: 8,
-                width: 100,
-                color: CustomColors.battlePokemonInfoContainerHpColor,
+              Expanded(
+                child: Container(
+                  height: 8,
+                  color: CustomColors.battlePokemonInfoContainerHpColor,
+                ),
               ),
             ],
           ),
