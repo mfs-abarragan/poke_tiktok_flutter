@@ -10,3 +10,5 @@ Consideraciones del proyecto:
 4. La app fue testeada en contra de los casos de uso más usuales. Sin mebargo, puede mostrar desviaciones de comportamiento ante los casos menos comunes
 5. La app fue desarrollada basada en clean architecture y una variación del patrón Bloc.
 6. Cuenta con soporte para funcionalidad sin conexión y optimización de recursos web
+7. Se priorizó la calidad de la experiencia del usuario
+
